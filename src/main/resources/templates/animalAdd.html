@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Animal</title>
+</head>
+<body>
+    <form action="/animal/add" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title"><br>
+        <input type="text" name="shortText" placeholder="Short Text"><br>
+        <input type="text" name="description" placeholder="Description"><br>
+        <input type="text" name="location" placeholder="Location"><br>
+        <input type="text" name="color" placeholder="Color"><br>
+        <input type="text" name="weight" placeholder="Weight"><br>
+        <input type="text" name="breed" placeholder="Breed"><br>
+        <input type="text" name="size" placeholder="Size"><br>
+        Date of birth: <input type="date" name="dob"><br>
+        <input type="text" name="age" placeholder="Age"><br>
+        Gender: <select name="gender">
+                    <option value="FEMALE">FEMALE</option>
+                    <option value="MALE">MALE</option>
+                </select><br>
+        <input type="text" name="price" placeholder="Price"><br>
+        <!--<input type="date" name="createdDate"><br>-->
+        Category: <select name="category.id">
+                    <option th:each="cat : ${categories}" th:value="${cat.id}"  th:text="${cat.name}"></option>
+                </select><br>
+        Upload Images: <input type="file" multiple name="picture"><br>
+
+        <input type="submit" name="Add Animal"><br>
+    </form>
+</body>
+</html>
