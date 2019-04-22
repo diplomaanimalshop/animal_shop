@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>AddAccessory</title>
+    <meta name="description"
+          content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/admin/css/app.v2.css" type="text/css">
+    <link rel="stylesheet" href="/admin/css/font.css" type="text/css" cache="false">
+    <link rel="stylesheet" href="/admin/js/datepicker/datepicker.css" type="text/css" cache="false">
+    <!--[if lt IE 9]>
+    <script src="/admin/js/ie/respond.min.js" cache="false"></script>
+    <script src="/admin/js/ie/html5.js" cache="false"></script>
+    <script src="/admin/js/ie/fix.js" cache="false"></script> <![endif]--></head>
+<body>
+<section class="hbox stretch"> <!-- .aside -->
+    <aside class="bg-success dk aside-sm nav-vertical no-borders" id="nav">
+        <section class="vbox">
+            <header class="nav-bar"><a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen"
+                                       data-target="#nav"> <i class="fa fa-bars"></i> </a> <a href="#" class="nav-brand"
+                                                                                              data-toggle="fullscreen">Animals Shop</a>
+                <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user"> <i
+                        class="fa fa-comment-o"></i> </a></header>
+            <section>
+                <div class="nav-user hidden-xs pos-rlt">
+                    <div class="nav-avatar pos-rlt"><a href="#" class="thumb-sm avatar animated rollIn"
+                                                       data-toggle="dropdown"> <img width="50" th:src="@{/user/getImage(avatar=${user.avatar})}"> <span
+                            class="caret caret-white"></span> </a>
+                        <ul class="dropdown-menu m-t-sm animated fadeInLeft"><span class="arrow top"></span>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a></li>
+                            <li class="divider"></li>
+                            <li><a href="docs.html">Help</a></li>
+                            <li><a href="signin.html">Logout</a></li>
+                        </ul>
+                        <div class="visible-xs m-t m-b"><a href="#" class="h3">John.Smith</a>
+                            <p><i class="fa fa-map-marker"></i> London, UK</p></div>
+                    </div>
+                    <div class="nav-msg"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b
+                            class="badge badge-white count-n">2</b> </a>
+                        <section class="dropdown-menu m-l-sm pull-left animated fadeInRight">
+                            <div class="arrow left"></div>
+                            <section class="panel bg-white">
+                                <header class="panel-heading"><strong>You have <span class="count-n">2</span>
+                                    notifications</strong></header>
+                                <div class="list-group"><a href="#" class="media list-group-item"> <span
+                                        class="pull-left thumb-sm"> <img width="50" th:src="@{/user/getImage(avatar=${user.avatar})}"> </span> <span
+                                        class="media-body block m-b-none"> Use awesome animate.css<br> <small
+                                        class="text-muted">28 Aug 13</small> </span> </a> <a href="#"
+                                                                                             class="media list-group-item">
+                                    <span class="media-body block m-b-none"> 1.0 initial released<br> <small
+                                            class="text-muted">27 Aug 13</small> </span> </a></div>
+                                <footer class="panel-footer text-sm"><a href="#" class="pull-right"><i
+                                        class="fa fa-cog"></i></a> <a href="#">See all the notifications</a></footer>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+                <nav class="nav-primary hidden-xs">
+                    <ul class="nav">
+                        <li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i
+                                class="fa fa-book"></i> <span>Posts</span> </a>
+                            <ul class="dropdown-menu">
+
+                                <li><a href="/user/allAnimals">Animals</a></li>
+                                <li><a href="/user/allFeeds">Feeds</a></li>
+                                <li><a href="/user/allAccessories">Accessories</a></li>
+
+                                <!--<li class="dropdown-submenu"><a href="#" class="dropdown-toggle"-->
+                                <!--data-toggle="dropdown"> <span>Animals</span> </a>-->
+                                <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="/allAnimals">Dog </a></li>-->
+                                <!--<li><a href="#">Cat</a></li>-->
+                                <!--<li><a href="#">Berds</a></li>-->
+                                <!--<li><a href="#">Rodents</a></li>-->
+                                <!--<li><a href="#">Ferrets</a></li>-->
+                                <!--<li><a href="#">Horses</a></li>-->
+                                <!--<li><a href="#">Aquarium fish</a></li>-->
+                                <!--<li><a href="#">Reptiles</a></li>-->
+                                <!--<li><a href="#">Insects</a></li>-->
+                                <!--<li><a href="#">Farm animals</a></li>-->
+                                <!--<li><a href="#">Other animals</a></li>-->
+                                <!--</ul>-->
+                                <!--</li>-->
+                                <!--<li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+                                <!--<span>Feeds</span> </a>-->
+                                <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">For dogs </a></li>-->
+                                <!--<li><a href="#">For cats</a></li>-->
+                                <!--<li><a href="#">For others</a></li>-->
+                                <!--</ul>-->
+                                <!--</li>-->
+                                <!--<li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+                                <!--<span>Accessories</span> </a>-->
+                                <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">For dogs </a></li>-->
+                                <!--<li><a href="#">For cats</a></li>-->
+                                <!--<li><a href="#">For others</a></li>-->
+                                <!--</ul>-->
+                                <!--</li>-->
+
+                            </ul>
+                        </li>
+                        <!--<li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i-->
+                        <!--class="fa fa-file-text"></i> <span>Pages</span> </a>-->
+                        <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="dashboard.html">Dashboard</a></li>-->
+                        <!--<li><a href="dashboard-1.html">Dashboard one</a></li>-->
+                        <!--<li><a href="dashboard-2.html">Dashboard layout</a></li>-->
+                        <!--<li><a href="analysis.html">Analysis</a></li>-->
+                        <!--<li><a href="master.html">Master</a></li>-->
+                        <!--<li><a href="maps.html">Maps</a></li>-->
+                        <!--<li><a href="gallery.html">Gallery</a></li>-->
+                        <!--<li><a href="profile.html">Profile</a></li>-->
+                        <!--<li><a href="blog.html">Blog</a></li>-->
+                        <!--<li><a href="invoice.html">Invoice</a></li>-->
+                        <!--<li><a href="signin.html">Signin page</a></li>-->
+                        <!--<li><a href="signup.html">Signup page</a></li>-->
+                        <!--<li><a href="404.html">404 page</a></li>-->
+                        <!--</ul>-->
+                        <!--</li>-->
+                        <li class="active"><a href="/user/addAccessoryPage"> <i class="fa fa-suitcase"></i> <span>Add accessory</span> </a></li>
+                        <li><a href="/user/addFeedPage"> <i class="fa fa-cutlery"></i> <span>Add feed</span> </a></li>
+                        <li><a href="/user/addAnimalPage"> <i class="fa fa-github-alt"></i>
+                            <span>Add animal</span>
+                        </a></li>
+                    </ul>
+                </nav>
+            </section>
+            <footer class="footer bg-gradient hidden-xs"><a href="modal.lockme.html" data-toggle="ajaxModal"
+                                                            class="btn btn-sm btn-link m-r-n-xs pull-right"> <i
+                    class="fa fa-power-off"></i> </a> <a href="#nav" data-toggle="class:nav-vertical"
+                                                         class="btn btn-sm btn-link m-l-n-sm"> <i
+                    class="fa fa-bars"></i> </a></footer>
+        </section>
+    </aside> <!-- /.aside --> <!-- .vbox -->
+    <section id="content">
+        <section class="vbox">
+            <section class="bg-light lter">
+                <section class="hbox stretch"> <!-- .aside -->
+                    <aside>
+                        <section class="vbox">
+                            <section class="scrollable wrapper">
+                                <form action="/user/addAccessories" method="post" enctype="multipart/form-data">
+                                    <div class="timeline">
+
+                                        <div class="container col-md-8 offset-md-2 div-border py-2 mt-5">
+
+                                            <div class="add-post">
+                                                <h1>Add Accessory</h1>
+                                            </div>
+
+                                            <br>
+                                            <br>
+
+                                            <!--Category: <select name="parentCat.id">-->
+                                            <!--<option th:each="cat : ${accessoriesCategories}" th:value="${cat.id}"  th:text="${cat.name}"></option>-->
+                                            <!--</select><br>-->
+
+
+                                            <div class="row mt-3 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5">
+                                                    <label>Weight</label>
+                                                    <input class="form-control" type="text" name="material"
+                                                           placeholder="Material">
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row mt-3 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5">
+                                                    <label>Ingredients</label>
+                                                    <input class="form-control" type="text" name="color"
+                                                           placeholder="Color">
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row mt-3 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5">
+                                                    <label>Ingredients</label>
+                                                    <input class="form-control" type="text" name="size"
+                                                           placeholder="Size">
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row mt-3 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5">
+                                                    <label>Category</label>
+                                                    <select class="form-control col-md-4" name="parentCat.id">
+                                                        <option th:each="cat : ${accessoryCategory}" th:value="${cat.id}"
+                                                                th:text="${cat.name}">
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row mt-3 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5">
+                                                    <label>Price</label>
+                                                    <input class="form-control" type="text" name="price"
+                                                           placeholder="Price">
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row mt-3 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5">
+                                                    <label>Title</label>
+                                                    <input class="form-control" type="text" name="title"
+                                                           placeholder="Title">
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row mt-2 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5 ">
+                                                    <label>Short text</label>
+                                                    <textarea class="form-control" name="shortText"
+                                                              placeholder="Short text"
+                                                              required></textarea>
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row mt-2 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5 ">
+                                                    <label>Description</label>
+                                                    <textarea class="form-control" name="description"
+                                                              placeholder="Description"
+                                                              required></textarea>
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row mt-3 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5">
+                                                    <label>Location</label>
+                                                    <input class="form-control" type="text" name="location"
+                                                           placeholder="Location">
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row mt-2 pt-2 justify-content-center">
+                                                <div class="col-md-10 mx-5 ">
+                                                    <label>Image</label>
+                                                    <input class="form-control-file" type="file"  name="picture">
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="row my-2 pt-4 justify-content-center">
+                                                <div class="col-md-10 mx-5 ">
+                                                    <input type="submit" class="btn btn-outline-secondary col-md-12 "
+                                                           name="save" value="Save Post">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                        </section>
+                    </aside>
+                </section>
+            </section>
+        </section>
+    </section>
+    <script src="/admin/js/app.v2.js"></script> <!-- Bootstrap --> <!-- App --> <!-- fuelux -->
+    <script src="/admin/js/fuelux/fuelux.js"></script> <!-- datepicker -->
+    <script src="/admin/js/datepicker/bootstrap-datepicker.js"></script>
+</body>
+</html>
